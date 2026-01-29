@@ -26,7 +26,9 @@ This guide walks through activating all 6 MCP servers for YYC3-Claude. Three ser
 ## Step 1: GitHub Personal Access Token
 
 ### Why Needed
+
 The GitHub MCP server requires a token to:
+
 - Access your repositories
 - Create pull requests
 - Review code
@@ -35,6 +37,7 @@ The GitHub MCP server requires a token to:
 ### How to Create
 
 1. **Visit GitHub Settings**
+
    ```
    https://github.com/settings/tokens
    ```
@@ -43,6 +46,7 @@ The GitHub MCP server requires a token to:
    - Click "Generate new token" → "Generate new token (classic)"
 
 3. **Configure Token**
+
    ```
    Name: YYC3-Claude MCP
    Expiration: 90 days (or No expiration for development)
@@ -64,6 +68,7 @@ The GitHub MCP server requires a token to:
    - Format: `ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`
 
 ### Store Token
+
 ```bash
 # Add to .env.mcp
 echo "GITHUB_PERSONAL_ACCESS_TOKEN=ghp_YOUR_ACTUAL_TOKEN_HERE" >> .env.mcp
@@ -74,7 +79,9 @@ echo "GITHUB_PERSONAL_ACCESS_TOKEN=ghp_YOUR_ACTUAL_TOKEN_HERE" >> .env.mcp
 ## Step 2: Brave Search API Key
 
 ### Why Needed
+
 The Brave Search MCP server provides:
+
 - Web search capabilities
 - Current information retrieval
 - Research assistance
@@ -82,6 +89,7 @@ The Brave Search MCP server provides:
 ### How to Create
 
 1. **Visit Brave Search API**
+
    ```
    https://api.search.brave.com/app/keys
    ```
@@ -97,6 +105,7 @@ The Brave Search MCP server provides:
    - Format: `BSxxxxxxxxxxxxxx` or similar
 
 ### Store Key
+
 ```bash
 # Add to .env.mcp
 echo "BRAVE_API_KEY=BSYOUR_ACTUAL_API_KEY_HERE" >> .env.mcp
@@ -107,7 +116,9 @@ echo "BRAVE_API_KEY=BSYOUR_ACTUAL_API_KEY_HERE" >> .env.mcp
 ## Step 3: PostgreSQL (Optional)
 
 ### When Needed
+
 Only required if you want to:
+
 - Query databases
 - Run data analysis
 - Connect to existing PostgreSQL instances
@@ -115,12 +126,14 @@ Only required if you want to:
 ### Options
 
 **Option A: Use Existing Database**
+
 ```bash
 # Format: postgresql://user:password@host:port/database
 echo "DATABASE_URL=postgresql://your_user:your_password@localhost:5432/your_db" >> .env.mcp
 ```
 
 **Option B: Use Docker (Quick Setup)**
+
 ```bash
 # Start PostgreSQL in Docker
 docker run -d \
@@ -135,6 +148,7 @@ echo "DATABASE_URL=postgresql://postgres:yyc3_password@localhost:5432/yyc3_db" >
 ```
 
 **Option C: Skip for Now**
+
 ```bash
 # Leave as placeholder in .env.mcp
 # The MCP server will be disabled if URL is not set
@@ -145,12 +159,14 @@ echo "DATABASE_URL=postgresql://postgres:yyc3_password@localhost:5432/yyc3_db" >
 ## Step 4: Update Environment File
 
 ### Manual Edit
+
 ```bash
 # Open .env.mcp in editor
 nano .env.mcp
 ```
 
 Replace placeholder values:
+
 ```env
 # YYC3 MCP Servers Environment Configuration
 
@@ -165,6 +181,7 @@ DATABASE_URL=postgresql://user:password@localhost:5432/yyc3
 ```
 
 ### Verify File
+
 ```bash
 cat .env.mcp
 ```
@@ -185,6 +202,7 @@ chmod +x automation-scripts/activate-mcp.sh
 ```
 
 ### Expected Output
+
 ```
 =================================
 YYC3 MCP Servers Activation
@@ -226,6 +244,7 @@ Environment: /Users/yanyu/yyc3-claude/.env.mcp
 ## Step 6: Deploy to Claude Desktop
 
 ### Backup Existing Config
+
 ```bash
 # Create backup
 cp ~/Library/Application\ Support/Claude/claude_desktop_config.json \
@@ -233,6 +252,7 @@ cp ~/Library/Application\ Support/Claude/claude_desktop_config.json \
 ```
 
 ### Copy YYC3 MCP Config
+
 ```bash
 # Copy YYC3 config
 cp /Users/yanyu/yyc3-claude/mcp-servers/mcp-config.json \
@@ -240,6 +260,7 @@ cp /Users/yanyu/yyc3-claude/mcp-servers/mcp-config.json \
 ```
 
 ### Restart Claude Code
+
 ```bash
 # Quit Claude Code completely
 # Then restart it
@@ -274,11 +295,13 @@ claude "Query the yyc3 database"
 ### Expected Behavior
 
 **Successful**:
+
 - Claude responds with actual data from the service
 - No error messages about missing connections
 - MCP server logs show successful connections
 
 **If Failing**:
+
 - Check API keys are correct (no extra spaces)
 - Verify token scopes are correct
 - Check MCP server logs for errors
@@ -293,6 +316,7 @@ claude "Query the yyc3 database"
 **Symptom**: "GitHub token not set" error
 
 **Solutions**:
+
 1. Check token has correct scopes
 2. Verify no extra spaces in token
 3. Ensure token hasn't expired
@@ -303,6 +327,7 @@ claude "Query the yyc3 database"
 **Symptom**: "Brave API key not set" error
 
 **Solutions**:
+
 1. Verify API key is correct
 2. Check API quota not exceeded
 3. Ensure key is active (not disabled)
@@ -313,6 +338,7 @@ claude "Query the yyc3 database"
 **Symptom**: "Permission denied" error
 
 **Solutions**:
+
 ```bash
 # Fix Docker permissions
 sudo chown $USER /var/run/docker.sock
@@ -327,6 +353,7 @@ sudo usermod -aG docker $USER
 **Symptom**: MCP servers not showing in Claude
 
 **Solutions**:
+
 1. Verify config file path is correct
 2. Check JSON syntax is valid
 3. Restart Claude Code completely
@@ -339,6 +366,7 @@ sudo usermod -aG docker $USER
 ### Protecting API Keys
 
 1. **Never commit .env.mcp to Git**
+
    ```bash
    # Already in .gitignore
    .env.mcp
@@ -358,8 +386,8 @@ sudo usermod -aG docker $USER
 ### If Keys Are Exposed
 
 1. **Revoke Immediately**
-   - GitHub: https://github.com/settings/tokens
-   - Brave: https://api.search.brave.com/app/keys
+   - GitHub: <https://github.com/settings/tokens>
+   - Brave: <https://api.search.brave.com/app/keys>
 
 2. **Generate New Keys**
    - Follow creation steps above

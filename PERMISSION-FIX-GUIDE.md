@@ -1,5 +1,13 @@
 # Claude Code 权限配置完整指南
 
+> ***YanYuCloudCube***
+> 言启象限 | 语枢未来
+> ***Words Initiate Quadrants, Language Serves as Core for the Future***
+> 万象归元于云枢 | 深栈智启新纪元
+> ***All things converge in the cloud pivot; Deep stacks ignite a new era of intelligence***
+
+---
+
 > **更新时间**: 2026-01-29
 > **问题**: `--dangerously-skip-permissions` 没有完全避免权限提示
 
@@ -173,3 +181,10 @@ alias claude="claude --dangerously-skip-permissions"
 
 **创建时间**: 2026-01-29
 **版本**: v1.0.0
+
+---
+
+> 「***YanYuCloudCube***」
+> 「***<admin@0379.email>***」
+> 「***Words Initiate Quadrants, Language Serves as Core for the Future***」
+> 「***All things converge in the cloud pivot; Deep stacks ignite a new era of intelligence***」

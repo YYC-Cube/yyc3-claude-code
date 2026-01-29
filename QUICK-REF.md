@@ -1,5 +1,13 @@
 # YYC3 零度空间 - 快速参考卡
 
+> ***YanYuCloudCube***
+> 言启象限 | 语枢未来
+> ***Words Initiate Quadrants, Language Serves as Core for the Future***
+> 万象归元于云枢 | 深栈智启新纪元
+> ***All things converge in the cloud pivot; Deep stacks ignite a new era of intelligence***
+
+---
+
 ## 🚀 核心命令
 
 ### YYC3 Dev CLI (使用 yc 或 yyc3-devcli)
@@ -289,3 +297,10 @@ cat /Users/yanyu/yyc3-claude/mcp-servers/YYC3-MCP-GUIDE.md
 ---
 
 **零度空间 | 100%信任AI协同 | 万象归元于云枢**
+
+---
+
+> 「***YanYuCloudCube***」
+> 「***<admin@0379.email>***」
+> 「***Words Initiate Quadrants, Language Serves as Core for the Future***」
+> 「***All things converge in the cloud pivot; Deep stacks ignite a new era of intelligence***」

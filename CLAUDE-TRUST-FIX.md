@@ -1,5 +1,13 @@
 # Claude Code 权限信任设置完成
 
+> ***YanYuCloudCube***
+> 言启象限 | 语枢未来
+> ***Words Initiate Quadrants, Language Serves as Core for the Future***
+> 万象归元于云枢 | 深栈智启新纪元
+> ***All things converge in the cloud pivot; Deep stacks ignite a new era of intelligence***
+
+---
+
 ## ✅ 问题已解决
 
 已将以下目录设置为**已信任**状态，无需每次确认：
@@ -140,3 +148,10 @@ trust-dir untrust /path/to/directory
 **零度空间 | 100%信任AI协同 | 无需确认**
 
 创建时间: 2026-01-27
+
+---
+
+> 「***YanYuCloudCube***」
+> 「***<admin@0379.email>***」
+> 「***Words Initiate Quadrants, Language Serves as Core for the Future***」
+> 「***All things converge in the cloud pivot; Deep stacks ignite a new era of intelligence***」
