@@ -1,0 +1,44 @@
+{
+  "version": "1.0.0",
+  "createdAt": "2026-01-27",
+  "environment": "zero-friction",
+  "trustLevel": "100%",
+  "paths": {
+    "home": "/Users/yanyu/yyc3-claude",
+    "projects": "/Users/yanyu/yyc3-claude/projects-analysis",
+    "workflows": "/Users/yanyu/yyc3-claude/workflow-templates",
+    "mcp": "/Users/yanyu/yyc3-claude/mcp-servers",
+    "scripts": "/Users/yanyu/yyc3-claude/automation-scripts"
+  },
+  "ai": {
+    "claude": {
+      "enabled": true,
+      "mode": "bypass-permissions",
+      "alias": "claude"
+    },
+    "crush": {
+      "enabled": true,
+      "model": "glm-4.7",
+      "alias": "crush"
+    },
+    "ollama": {
+      "enabled": true,
+      "models": ["llama3", "codellama"]
+    }
+  },
+  "github": {
+    "org": "YYC-Cube",
+    "repos": 45,
+    "url": "https://github.com/YYC-Cube"
+  },
+  "cli": {
+    "command": "yyc3",
+    "path": "/Users/yanyu/yyc3-claude/automation-scripts/yyc3-cli.sh"
+  },
+  "features": {
+    "autoCommit": true,
+    "aiReview": true,
+    "autoDeploy": true,
+    "smartTesting": true
+  }
+}
