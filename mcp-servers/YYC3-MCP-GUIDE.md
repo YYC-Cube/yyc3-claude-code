@@ -7,6 +7,7 @@
 从 `/Users/yanyu/yyc3-claude/claude-prompts-mcp` 发现的MCP服务器:
 
 ### 1. Claude Prompts MCP
+
 - **路径**: `/Users/yanyu/yyc3-claude/claude-prompts-mcp`
 - **功能**: 提示词模板管理
 - **状态**: 已安装
@@ -14,6 +15,7 @@
 ## 🔧 推荐的MCP服务器配置
 
 ### 文件系统访问
+
 ```json
 {
   "mcpServers": {
@@ -26,6 +28,7 @@
 ```
 
 ### GitHub集成
+
 ```json
 {
   "mcpServers": {
@@ -45,6 +48,7 @@
 ```
 
 ### 数据库访问
+
 ```json
 {
   "mcpServers": {
@@ -57,6 +61,7 @@
 ```
 
 ### Web搜索
+
 ```json
 {
   "mcpServers": {
@@ -74,6 +79,7 @@
 ### YYC3专用MCP服务器
 
 #### 1. YYC3项目管理器
+
 ```typescript
 // servers/yyc3-project-manager/src/index.ts
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
@@ -160,6 +166,7 @@ main().catch(console.error);
 ```
 
 #### 2. YYC3代码生成器
+
 ```typescript
 // servers/yyc3-codegen/src/index.ts
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
@@ -210,6 +217,7 @@ server.setRequestHandler("tools/list", async () => ({
 ```
 
 #### 3. YYC3部署助手
+
 ```typescript
 // servers/yyc3-deploy/src/index.ts
 server.setRequestHandler("tools/list", async () => ({
@@ -240,6 +248,7 @@ server.setRequestHandler("tools/list", async () => ({
 ## 🚀 创建自定义MCP服务器
 
 ### 模板结构
+
 ```
 mcp-servers/
 ├── yyc3-custom-server/
@@ -251,6 +260,7 @@ mcp-servers/
 ```
 
 ### 快速创建
+
 ```bash
 # 进入MCP服务器目录
 cd /Users/yanyu/yyc3-claude/mcp-servers
@@ -289,6 +299,7 @@ EOF
 ## 📝 配置Claude Code使用MCP
 
 ### 编辑Claude配置文件
+
 ```bash
 # macOS配置路径
 ~/Library/Application Support/Claude/claude_desktop_config.json

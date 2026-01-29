@@ -9,9 +9,11 @@ YYC3 Skills是可复用的能力包，让Claude AI稳定地按同一套方法进
 ## 核心Skills
 
 ### 1. yyc3-stack-master - 技术栈专家
+
 精通Next.js 15, React 19, TypeScript, Tailwind CSS的全栈开发规范。
 
 **能力**:
+
 - Next.js 15 App Router开发
 - React 19组件设计
 - TypeScript类型系统
@@ -19,28 +21,34 @@ YYC3 Skills是可复用的能力包，让Claude AI稳定地按同一套方法进
 - Bun运行时优化
 
 **使用场景**:
+
 - 初始化新项目
 - 技术选型决策
 - 代码规范检查
 
 ### 2. yyc3-five-highs - 五高五标五化设计规范
+
 YYC3核心理念：五高、五标、五化的完整设计规范。
 
 **能力**:
+
 - 五高设计评审
 - 五标规范化检查
 - 五化架构评估
 - 质量保证清单
 
 **使用场景**:
+
 - UI/UX设计评审
 - 产品需求分析
 - 用户体验优化
 
 ### 3. yyc3-ai-integration - AI能力集成专家
+
 GLM-4.7模型集成、RAG检索增强生成、Prompt工程。
 
 **能力**:
+
 - GLM-4.7模型集成
 - OpenAI API调用
 - RAG系统实现
@@ -48,14 +56,17 @@ GLM-4.7模型集成、RAG检索增强生成、Prompt工程。
 - 流式响应处理
 
 **使用场景**:
+
 - AI功能开发
 - 智能浮窗系统开发
 - AI Agent平台建设
 
 ### 4. yyc3-microservices - 微服务架构专家
+
 Docker容器化、微服务拆分策略、API设计。
 
 **能力**:
+
 - 微服务架构设计
 - Docker容器化
 - API设计规范
@@ -63,14 +74,17 @@ Docker容器化、微服务拆分策略、API设计。
 - 分布式事务
 
 **使用场景**:
+
 - 后端系统架构
 - 服务拆分决策
 - API设计评审
 
 ### 5. yyc3-deployment-ops - 部署运维专家
+
 阿里云ECS部署、NAS存储配置、CI/CD流程。
 
 **能力**:
+
 - 阿里云ECS部署
 - NAS存储配置
 - FRP内网穿透
@@ -78,6 +92,7 @@ Docker容器化、微服务拆分策略、API设计。
 - 监控告警配置
 
 **使用场景**:
+
 - 项目部署
 - 环境配置
 - 性能监控
@@ -168,12 +183,14 @@ Claude: [自动加载 yyc3-stack-master]
 ## 维护指南
 
 ### 更新Skill
+
 1. 修改instructions.md或skill.json
 2. 更新version字段
 3. 更新updatedAt字段
 4. 提交变更
 
 ### 版本管理
+
 - 主版本：破坏性变更
 - 次版本：功能新增
 - 修订版本：bug修复

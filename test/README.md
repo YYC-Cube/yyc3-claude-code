@@ -8,6 +8,7 @@
 ## Overview
 
 YYC3-Claude uses a modern testing stack based on:
+
 - **Vitest** for fast unit testing (Bun-native)
 - **Playwright** for E2E testing
 - **ESLint + Prettier** for code quality
@@ -159,6 +160,7 @@ open coverage/index.html
 ## CI/CD Integration
 
 Tests run automatically on:
+
 - Push to any branch
 - Pull requests
 - Merge to main

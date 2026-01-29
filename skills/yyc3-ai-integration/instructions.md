@@ -5,11 +5,13 @@
 ## 核心AI模型
 
 ### GLM-4.7（主要）
+
 - 上下文窗口：131,072 tokens
 - 提供者：zai
 - 适用场景：代码生成、数据分析、长文本处理
 
 ### OpenAI GPT-4.1（辅助）
+
 - 上下文窗口：100,000 tokens
 - 代码理解准确率：54.6%
 - 适用场景：复杂推理、代码分析
@@ -80,6 +82,7 @@ export async function analyzeWithTools(query: string) {
 ## RAG系统架构
 
 ### 1. 文档切分
+
 ```typescript
 export async function splitDocuments(docs: Document[]) {
   const splitter = new RecursiveCharacterTextSplitter({
@@ -91,6 +94,7 @@ export async function splitDocuments(docs: Document[]) {
 ```
 
 ### 2. 向量化
+
 ```typescript
 export async function embedDocuments(chunks: Document[]) {
   const embeddings = await zai.embeddings.create({
@@ -102,6 +106,7 @@ export async function embedDocuments(chunks: Document[]) {
 ```
 
 ### 3. 检索生成
+
 ```typescript
 export async function generateAnswer(query: string, context: string) {
   const completion = await zai.chat.completions.create({
@@ -118,16 +123,19 @@ export async function generateAnswer(query: string, context: string) {
 ## 最佳实践
 
 ### 1. 错误处理
+
 - 实现重试机制
 - 超时控制
 - 降级策略
 
 ### 2. 性能优化
+
 - 流式响应
 - 结果缓存
 - 批量处理
 
 ### 3. 安全考虑
+
 - API密钥管理
 - 内容过滤
 - 访问控制

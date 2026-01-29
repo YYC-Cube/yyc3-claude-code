@@ -5,24 +5,28 @@
 ## 架构原则
 
 ### 高可用
+
 - 冗余设计
 - 故障转移
 - 健康检查
 - 熔断降级
 
 ### 高扩展
+
 - 水平扩展
 - 微服务化
 - 负载均衡
 - 弹性伸缩
 
 ### 高性能
+
 - 缓存策略
 - CDN加速
 - 异步处理
 - 数据库优化
 
 ### 高安全
+
 - 认证授权
 - 数据加密
 - 安全审计
@@ -31,6 +35,7 @@
 ## 技术栈
 
 ### 容器化
+
 ```dockerfile
 FROM node:20-alpine AS base
 # 安装依赖
@@ -59,6 +64,7 @@ CMD ["node", "server.js"]
 ```
 
 ### 服务通信
+
 ```typescript
 // RESTful API
 export async function callUserService(userId: string) {
@@ -86,6 +92,7 @@ export async function getUserProfile(userId: string) {
 ```
 
 ### 分布式事务
+
 ```typescript
 // Saga模式
 export async function createOrderSaga(orderData: OrderData) {
@@ -104,6 +111,7 @@ export async function createOrderSaga(orderData: OrderData) {
 ## 部署方案
 
 ### Docker Compose
+
 ```yaml
 version: '3.8'
 services:
@@ -133,6 +141,7 @@ volumes:
 ```
 
 ### Kubernetes
+
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
