@@ -5,23 +5,27 @@
 ## 部署平台
 
 ### 阿里云ECS
+
 - 服务器：8.130.127.121
 - 操作系统：Ubuntu 22.04 LTS
 - Docker：已安装
 - Nginx：反向代理
 
 ### NAS存储
+
 - 路径：/volume1/www
 - 用途：静态文件、备份
 - 同步：rsync
 
 ### 内网穿透
+
 - 工具：FRP
 - 用途：本地开发环境访问
 
 ## CI/CD流程
 
 ### GitHub Actions
+
 ```yaml
 name: YYC3 CI/CD
 
@@ -66,16 +70,19 @@ jobs:
 ## 部署命令
 
 ### Vercel
+
 ```bash
 yyc3 deploy vercel --prod
 ```
 
 ### 阿里云ECS
+
 ```bash
 yyc3 deploy ecs --server=8.130.127.121
 ```
 
 ### NAS
+
 ```bash
 yyc3 deploy nas --target=/volume1/www
 ```
@@ -83,6 +90,7 @@ yyc3 deploy nas --target=/volume1/www
 ## 监控告警
 
 ### Prometheus配置
+
 ```yaml
 global:
   scrape_interval: 15s
@@ -98,6 +106,7 @@ scrape_configs:
 ```
 
 ### Grafana仪表板
+
 - CPU使用率 < 70%
 - 内存使用率 < 80%
 - 响应时间 < 200ms
@@ -107,6 +116,7 @@ scrape_configs:
 ## 常见操作
 
 ### 查看日志
+
 ```bash
 # Docker容器日志
 docker logs -f yyc3-api
@@ -119,6 +129,7 @@ tail -f /var/log/yyc3/app.log
 ```
 
 ### 重启服务
+
 ```bash
 # Docker Compose
 docker-compose restart
@@ -131,6 +142,7 @@ sudo systemctl restart nginx
 ```
 
 ### 备份恢复
+
 ```bash
 # 数据库备份
 pg_dump yyc3 > backup_$(date +%Y%m%d).sql
@@ -145,12 +157,14 @@ rsync -avz /local/path/ user@nas:/volume1/www/
 ## 故障排查
 
 ### 服务无法启动
+
 1. 检查端口占用
 2. 查看错误日志
 3. 验证配置文件
 4. 检查依赖服务
 
 ### 性能问题
+
 1. CPU分析：`top`、`htop`
 2. 内存分析：`free -h`
 3. 磁盘IO：`iostat`

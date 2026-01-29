@@ -225,8 +225,8 @@ jobs:
         run: |
           echo "Verifying documentation structure..."
           test -f README.md
-          test -f IMPLEMENTATION-GUIDE.md
-          test -f AGENTIC-ECOSYSTEM-DESIGN.md
+          test -f docs/03-implementation/IMPLEMENTATION-GUIDE.md
+          test -f docs/02-architecture/AGENTIC-ECOSYSTEM-DESIGN.md
           echo "All core documentation files present"
 
   # ============================================
@@ -244,14 +244,14 @@ jobs:
       - name: Verify MCP config
         run: |
           echo "Checking MCP configuration..."
-          test -f mcp-servers/mcp-config.json
-          test -f mcp-servers/MCP-CONFIG-GUIDE.md
+          test -f tools/mcp/mcp-config.json
+          test -f tools/mcp/MCP-CONFIG-GUIDE.md
           echo "MCP configuration files present"
 
       - name: Validate MCP config JSON
         run: |
           echo "Validating MCP config JSON syntax..."
-          cat mcp-servers/mcp-config.json | jq empty
+          cat tools/mcp/mcp-config.json | jq empty
           echo "MCP config is valid JSON"
 
   # ============================================
@@ -269,8 +269,8 @@ jobs:
       - name: Verify Skills structure
         run: |
           echo "Checking Skills directory structure..."
-          test -d skills
-          for skill in skills/*/; do
+          test -d src/skills
+          for skill in src/skills/*/; do
             if [ -d "$skill" ]; then
               echo "Checking skill: $skill"
               test -f "$skill/skill.json" || echo "Warning: Missing skill.json in $skill"
@@ -282,9 +282,9 @@ jobs:
       - name: Verify Subagents structure
         run: |
           echo "Checking Subagents directory structure..."
-          test -d subagents
-          test -d subagents/configs
-          test -d subagents/prompts
+          test -d src/subagents
+          test -d src/subagents/configs
+          test -d src/subagents/prompts
           echo "Subagents structure check complete"
 
   # ============================================

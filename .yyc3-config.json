@@ -5,10 +5,12 @@
   "trustLevel": "100%",
   "paths": {
     "home": "/Users/yanyu/yyc3-claude",
-    "projects": "/Users/yanyu/yyc3-claude/projects-analysis",
-    "workflows": "/Users/yanyu/yyc3-claude/workflow-templates",
-    "mcp": "/Users/yanyu/yyc3-claude/mcp-servers",
-    "scripts": "/Users/yanyu/yyc3-claude/automation-scripts"
+    "docs": "/Users/yanyu/yyc3-claude/docs",
+    "projects": "/Users/yanyu/yyc3-claude/projects",
+    "src": "/Users/yanyu/yyc3-claude/src",
+    "tools": "/Users/yanyu/yyc3-claude/tools",
+    "config": "/Users/yanyu/yyc3-claude/config",
+    "test": "/Users/yanyu/yyc3-claude/test"
   },
   "ai": {
     "claude": {
@@ -33,7 +35,7 @@
   },
   "cli": {
     "command": "yyc3",
-    "path": "/Users/yanyu/yyc3-claude/automation-scripts/yyc3-cli.sh"
+    "path": "/Users/yanyu/yyc3-claude/tools/automation/yyc3-cli.sh"
   },
   "features": {
     "autoCommit": true,

@@ -192,77 +192,147 @@ bun run dev
 #    - Brave Search: https://api.search.brave.com/app/keys
 
 # 2. Configure environment
-nano .env.mcp
+nano config/.env.mcp
 
 # 3. Run activation script
-./automation-scripts/activate-mcp.sh
+./tools/automation/activate-mcp.sh
 
 # 4. Deploy to Claude Desktop
-cp mcp-servers/mcp-config.json \
+cp tools/mcp/mcp-config.json \
    ~/Library/Application\ Support/Claude/claude_desktop_config.json
 
 # 5. Restart Claude Code
 ```
 
-**Detailed Guide**: [API-KEY-GUIDE.md](./mcp-servers/API-KEY-GUIDE.md)
+**Detailed Guide**: [API-KEY-GUIDE.md](./tools/mcp/API-KEY-GUIDE.md)
 
 ---
 
 ## 📁 Project Structure
 
 ```
-/Users/yanyu/yyc3-claude/
-├── .github/workflows/          # CI/CD Pipeline (15 jobs)
-│   ├── ci.yml                   # Quality, Test, Security
-│   └── deploy.yml               # Deployment automation
+yyc3-claude-code/
+├── README.md                          # Project overview
+├── LICENSE                           # MIT License
+├── .gitignore                        # Git ignore rules
+├── .yyc3-config.json                 # YYC³ configuration
 │
-├── skills/                      # 5 Core Skills
-│   ├── yyc3-stack-master/       # Tech Stack Expert
-│   ├── yyc3-five-highs/         # Design Standards
-│   ├── yyc3-ai-integration/     # AI Integration
-│   ├── yyc3-microservices/      # Microservices Architecture
-│   └── yyc3-deployment-ops/     # DevOps & Deployment
+├── 📂 docs/                          # 📚 Documentation Center
+│   ├── 📂 01-overview/               # Project Overview
+│   │   ├── README.md                 # Project introduction
+│   │   ├── QUICK-REF.md              # Quick reference
+│   │   └── YYC³团队标准化审核清单.md
+│   │
+│   ├── 📂 02-architecture/           # Architecture Design
+│   │   ├── AGENTIC-ECOSYSTEM-DESIGN.md
+│   │   ├── AGENTIC-ECOSYSTEM-SUMMARY.md
+│   │   └── NODE-PLANNING-ROADMAP.md
+│   │
+│   ├── 📂 03-implementation/         # Implementation Guide
+│   │   ├── IMPLEMENTATION-GUIDE.md
+│   │   ├── GITHUB-SETUP.md
+│   │   ├── PERMISSION-FIX-GUIDE.md
+│   │   ├── CLAUDE-TRUST-FIX.md
+│   │   └── RESTART-CHECKLIST.md
+│   │
+│   ├── 📂 04-workflow/              # Workflow Documentation
+│   │   ├── INTELLIGENT-PROGRAMMING-WORKFLOW.md
+│   │   └── YYC3-STANDARD-WORKFLOW.md
+│   │
+│   ├── 📂 05-progress/              # Progress Tracking
+│   │   ├── PROGRESS-TRACKER.md
+│   │   ├── PROGRESS-REPORT-2026-01-29.md
+│   │   ├── SESSION-RECORD.md
+│   │   └── VERIFICATION-REPORT.md
+│   │
+│   ├── 📂 06-evaluation/            # Evaluation Reports
+│   │   ├── COMPREHENSIVE-EVALUATION-REPORT.md
+│   │   ├── VERIFICATION-PHASE1.md
+│   │   └── POST-RESTART-GUIDE.txt
+│   │
+│   └── 📂 07-projects/              # Project Analysis
+│       └── YYC-CUBE-ECOSYSTEM.md
 │
-├── subagents/                   # 6 Professional Agents
-│   ├── configs/                 # Agent configurations
-│   │   ├── product-analyst.json
-│   │   ├── solution-architect.json
-│   │   ├── fullstack-developer.json
-│   │   ├── qa-tester.json
-│   │   ├── devops-engineer.json
-│   │   └── ai-scientist.json
-│   └── prompts/                 # Agent system prompts
+├── 📂 src/                          # 💻 Source Code
+│   ├── 📂 skills/                   # Skill Modules (5 skills)
+│   │   ├── yyc3-stack-master/       # Tech Stack Expert
+│   │   ├── yyc3-five-highs/         # Design Standards
+│   │   ├── yyc3-ai-integration/     # AI Integration
+│   │   ├── yyc3-microservices/      # Microservices Architecture
+│   │   └── yyc3-deployment-ops/     # DevOps & Deployment
+│   │
+│   ├── 📂 subagents/                # Professional Agents (6 agents)
+│   │   ├── configs/                 # Agent configurations
+│   │   │   ├── product-analyst.json
+│   │   │   ├── solution-architect.json
+│   │   │   ├── fullstack-developer.json
+│   │   │   ├── qa-tester.json
+│   │   │   ├── devops-engineer.json
+│   │   │   └── ai-scientist.json
+│   │   ├── prompts/                 # Agent system prompts
+│   │   └── SUBAGENTS-CONFIG.md
+│   │
+│   └── 📂 workflow/                 # Workflow Templates
+│       └── YYC3-STANDARD-WORKFLOW.md
 │
-├── mcp-servers/                 # MCP Configuration
-│   ├── mcp-config.json          # Server definitions
-│   ├── API-KEY-GUIDE.md         # Setup instructions
-│   ├── MCP-QUICK-SETUP.md       # Quick reference
-│   └── MCP-CONFIG-GUIDE.md      # Full documentation
+├── 📂 tools/                        # 🔧 Tools & Scripts
+│   ├── 📂 automation/               # Automation Scripts
+│   │   ├── activate-mcp.sh          # MCP activation
+│   │   ├── trust-claude-dirs.sh    # Claude trust setup
+│   │   └── yyc3-cli.sh            # YYC³ CLI tool
+│   │
+│   └── 📂 mcp/                      # MCP Servers
+│       ├── mcp-config.json          # Server definitions
+│       ├── API-KEY-GUIDE.md         # Setup instructions
+│       ├── MCP-QUICK-SETUP.md       # Quick reference
+│       ├── MCP-CONFIG-GUIDE.md      # Full documentation
+│       └── YYC3-MCP-GUIDE.md      # YYC³ MCP guide
 │
-├── test/                        # Test Suite
-│   ├── unit/                    # Unit tests (Vitest)
-│   ├── e2e/                     # E2E tests (Playwright)
-│   ├── setup.ts                 # Test configuration
-│   └── README.md                # Testing guide
+├── 📂 test/                         # 🧪 Test Suite
+│   ├── 📂 unit/                     # Unit tests (Vitest)
+│   │   └── example.test.ts
+│   ├── 📂 e2e/                      # E2E tests (Playwright)
+│   │   └── example.spec.ts
+│   ├── setup.ts                     # Test configuration
+│   └── README.md                    # Testing guide
 │
-├── automation-scripts/          # Automation Tools
-│   ├── activate-mcp.sh          # MCP activation
-│   └── yyc3-cli.sh              # YYC3 CLI tool
+├── 📂 projects/                     # 📦 Project Instances
+│   ├── 📂 ralph-loop/               # Ralph Loop Project
+│   │   ├── Ralph-Loop-HaiLan-Adult-products-实操方案.md
+│   │   ├── Ralph-Loop-HaiLan-Adult-products.md
+│   │   ├── Ralph-Loop-Python+Flask.md
+│   │   ├── Ralph-Loop-场景开发-阶段落地.md
+│   │   ├── Ralph-Loop-文档闭环立项版.md
+│   │   ├── Ralph-Loop-维度解析-落地指导.md
+│   │   └── 文档闭环工具需求规格说明书（立项版）.md
+│   │
+│   └── 📂 external/                 # External Submodules
+│       ├── claude-prompts-mcp/      # Claude Prompts MCP
+│       └── zai-coding-plugins/      # Zai Coding Plugins
 │
-├── public/                      # Static assets
-│   └── yyc3-article-cover-03.png # Project cover
+├── 📂 config/                       # ⚙️ Configuration Files
+│   ├── .env.mcp                   # MCP environment variables
+│   ├── .prettierrc                # Prettier configuration
+│   └── eslint.config.mjs           # ESLint configuration
 │
-├── docs/                        # Documentation
-│   ├── IMPLEMENTATION-GUIDE.md  # Setup guide
-│   ├── PROGRESS-TRACKER.md      # Progress dashboard
-│   └── VERIFICATION-PHASE1.md   # Phase 1 report
+├── 📂 .github/                      # GitHub Configuration
+│   └── workflows/
+│       ├── ci.yml                   # Quality, Test, Security
+│       └── deploy.yml               # Deployment automation
 │
-├── package.json                 # Project configuration
-├── vitest.config.ts             # Vitest configuration
-├── playwright.config.ts         # Playwright configuration
-├── tsconfig.json                # TypeScript configuration
-└── README.md                    # This file
+├── 📂 .claude/                      # Claude Configuration
+│   └── instructions.md
+│
+├── 📂 runtime/                      # Runtime State
+│   └── argument-history.json
+│
+├── 📂 public/                       # Static Assets
+│   └── yyc3-article-cover-03.png   # Project cover
+│
+└── 📂 node_modules/                 # Dependencies
 ```
+
+**Documentation Map**: See [DOCUMENTATION-MAP.md](./DOCUMENTATION-MAP.md) for complete file mapping
 
 ---
 
@@ -415,20 +485,24 @@ timeline
 
 | Document | Description |
 |----------|-------------|
-| [IMPLEMENTATION-GUIDE.md](./IMPLEMENTATION-GUIDE.md) | Quick start & setup |
-| [PROGRESS-TRACKER.md](./PROGRESS-TRACKER.md) | Progress dashboard |
-| [AGENTIC-ECOSYSTEM-DESIGN.md](./AGENTIC-ECOSYSTEM-DESIGN.md) | Architecture overview |
-| [INTELLIGENT-PROGRAMMING-WORKFLOW.md](./INTELLIGENT-PROGRAMMING-WORKFLOW.md) | Development workflow |
-| [COMPREHENSIVE-EVALUATION-REPORT.md](./COMPREHENSIVE-EVALUATION-REPORT.md) | Project analysis |
-| [NODE-PLANNING-ROADMAP.md](./NODE-PLANNING-ROADMAP.md) | 6-month roadmap |
+| [IMPLEMENTATION-GUIDE.md](./docs/03-implementation/IMPLEMENTATION-GUIDE.md) | Quick start & setup |
+| [PROGRESS-TRACKER.md](./docs/05-progress/PROGRESS-TRACKER.md) | Progress dashboard |
+| [AGENTIC-ECOSYSTEM-DESIGN.md](./docs/02-architecture/AGENTIC-ECOSYSTEM-DESIGN.md) | Architecture overview |
+| [INTELLIGENT-PROGRAMMING-WORKFLOW.md](./docs/04-workflow/INTELLIGENT-PROGRAMMING-WORKFLOW.md) | Development workflow |
+| [COMPREHENSIVE-EVALUATION-REPORT.md](./docs/06-evaluation/COMPREHENSIVE-EVALUATION-REPORT.md) | Project analysis |
+| [NODE-PLANNING-ROADMAP.md](./docs/02-architecture/NODE-PLANNING-ROADMAP.md) | 6-month roadmap |
 
 ### User Guides
 
 | Guide | Purpose |
 |-------|---------|
-| [API-KEY-GUIDE.md](./mcp-servers/API-KEY-GUIDE.md) | MCP server activation |
-| [GITHUB-SETUP.md](./GITHUB-SETUP.md) | GitHub repository setup |
-| [VERIFICATION-PHASE1.md](./VERIFICATION-PHASE1.md) | Phase 1 verification |
+| [API-KEY-GUIDE.md](./tools/mcp/API-KEY-GUIDE.md) | MCP server activation |
+| [GITHUB-SETUP.md](./docs/03-implementation/GITHUB-SETUP.md) | GitHub repository setup |
+| [VERIFICATION-PHASE1.md](./docs/05-progress/VERIFICATION-PHASE1.md) | Phase 1 verification |
+
+### Complete Documentation
+
+For a complete mapping of all documentation files, see [DOCUMENTATION-MAP.md](./DOCUMENTATION-MAP.md).
 
 ---
 

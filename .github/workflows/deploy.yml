@@ -97,15 +97,15 @@ jobs:
       - name: Validate MCP config
         run: |
           echo "Validating MCP configuration..."
-          cat mcp-servers/mcp-config.json | jq empty > /dev/null
+          cat tools/mcp/mcp-config.json | jq empty > /dev/null
           echo "MCP config is valid"
 
       - name: Create deployment artifact
         run: |
           mkdir -p dist
-          cp mcp-servers/mcp-config.json dist/
-          cp mcp-servers/MCP-CONFIG-GUIDE.md dist/
-          cp mcp-servers/MCP-QUICK-SETUP.md dist/
+          cp tools/mcp/mcp-config.json dist/
+          cp tools/mcp/MCP-CONFIG-GUIDE.md dist/
+          cp tools/mcp/MCP-QUICK-SETUP.md dist/
           echo "MCP configuration files packaged"
 
       - name: Upload MCP config artifact
