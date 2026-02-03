@@ -1,5 +1,13 @@
 # MCP Server Activation - Step-by-Step Guide
 
+> ***YanYuCloudCube***
+> 言启象限 | 语枢未来
+> ***Words Initiate Quadrants, Language Serves as Core for Future***
+> 万象归元于云枢 | 深栈智启新纪元
+> ***All things converge in cloud pivot; Deep stacks ignite a new era of intelligence***
+
+---
+
 > **YYC3-Claude MCP Configuration**
 > **Created**: 2026-01-29
 > **Purpose**: Guide for activating all MCP servers
@@ -435,4 +443,9 @@ After successful MCP activation:
 **Last Updated**: 2026-01-29
 **Version**: 1.0.0
 
-> 万象归元于云枢 | 深栈智启新纪元
+---
+
+> 「***YanYuCloudCube***」
+> 「***<admin@0379.email>***」
+> 「***Words Initiate Quadrants, Language Serves as Core for Future***」
+> 「***All things converge in cloud pivot; Deep stacks ignite a new era of intelligence***」

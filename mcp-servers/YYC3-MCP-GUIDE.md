@@ -1,5 +1,13 @@
 # YYC3 MCP 服务器配置指南
 
+> ***YanYuCloudCube***
+> 言启象限 | 语枢未来
+> ***Words Initiate Quadrants, Language Serves as Core for Future***
+> 万象归元于云枢 | 深栈智启新纪元
+> ***All things converge in cloud pivot; Deep stacks ignite a new era of intelligence***
+
+---
+
 > Model Context Protocol 配置与使用
 
 ## 📋 已安装的MCP服务器
@@ -339,3 +347,10 @@ bun run src/index.ts
 ---
 
 **零摩擦AI协同开发**
+
+---
+
+> 「***YanYuCloudCube***」
+> 「***<admin@0379.email>***」
+> 「***Words Initiate Quadrants, Language Serves as Core for Future***」
+> 「***All things converge in cloud pivot; Deep stacks ignite a new era of intelligence***」

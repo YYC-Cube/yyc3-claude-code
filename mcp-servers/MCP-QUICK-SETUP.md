@@ -1,5 +1,13 @@
 # MCP Servers Quick Setup Guide
 
+> ***YanYuCloudCube***
+> 言启象限 | 语枢未来
+> ***Words Initiate Quadrants, Language Serves as Core for Future***
+> 万象归元于云枢 | 深栈智启新纪元
+> ***All things converge in cloud pivot; Deep stacks ignite a new era of intelligence***
+
+---
+
 > **YYC3-Claude MCP Configuration**
 > **Created**: 2026-01-29
 > **Status**: Configuration Complete, Awaiting API Keys
@@ -24,6 +32,7 @@
 ### Step 1: Get Your API Keys
 
 #### GitHub Personal Access Token
+
 ```bash
 # Visit: https://github.com/settings/tokens
 # Create a new token with scopes:
@@ -34,12 +43,14 @@
 ```
 
 #### Brave Search API Key
+
 ```bash
 # Visit: https://api.search.brave.com/app/keys
 # Sign up and get your API key
 ```
 
 #### PostgreSQL Connection (Optional)
+
 ```bash
 # Format: postgresql://user:password@host:port/database
 # Example: postgresql://yyc3:user:pass@localhost:5432/yyc3
@@ -59,6 +70,7 @@ code /Users/yanyu/yyc3-claude/.env.mcp
 ```
 
 Replace placeholder values:
+
 ```env
 GITHUB_PERSONAL_ACCESS_TOKEN=ghp_YOUR_ACTUAL_TOKEN_HERE
 BRAVE_API_KEY=BSYOUR_ACTUAL_API_KEY_HERE
@@ -68,11 +80,13 @@ DATABASE_URL=postgresql://user:password@localhost:5432/yyc3
 ### Step 3: Activate MCP Servers
 
 Run the activation script:
+
 ```bash
 /Users/yanyu/yyc3-claude/automation-scripts/activate-mcp.sh
 ```
 
 Then copy the MCP config to Claude:
+
 ```bash
 # Backup existing config
 cp ~/Library/Application\ Support/Claude/claude_desktop_config.json \
@@ -110,16 +124,19 @@ claude "List running Docker containers"
 ## Troubleshooting
 
 ### GitHub Token Not Working
+
 - ✅ Check token has correct scopes
 - ✅ Verify token hasn't expired
 - ✅ Ensure no extra spaces in token
 
 ### Brave Search Errors
+
 - ✅ Verify API key is valid
 - ✅ Check API quota not exceeded
 - ✅ Ensure key is copied correctly
 
 ### Docker Permission Issues
+
 ```bash
 # Fix Docker permissions
 sudo chown $USER /var/run/docker.sock
@@ -144,4 +161,9 @@ sudo usermod -aG docker $USER
 **Last Updated**: 2026-01-29
 **Version**: 1.0.0
 
-> 万象归元于云枢 | 深栈智启新纪元
+---
+
+> 「***YanYuCloudCube***」
+> 「***<admin@0379.email>***」
+> 「***Words Initiate Quadrants, Language Serves as Core for Future***」
+> 「***All things converge in cloud pivot; Deep stacks ignite a new era of intelligence***」
